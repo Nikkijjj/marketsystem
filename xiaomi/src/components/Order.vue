@@ -41,7 +41,27 @@
 		name: 'Cart',
 		data() {
 			return {
-				order: [],
+				// 初始化一些示例商品数据
+				order: [
+					{
+						text: "无线蓝牙耳机",
+						cover: "https://image.pp918.com/Brand/20230210/20230210184521_7560.png", 
+						price: 299,
+						quantity: 1
+					},
+					{
+						text: "智能手表",
+						cover: "https://th.bing.com/th/id/R.ee17ad095944ab29767019e1bc84426e?rik=MkWGRLmct4XQGQ&riu=http%3a%2f%2fpic.ntimg.cn%2ffile%2f20151216%2f8682897_154556302000_2.jpg&ehk=Yap8KBJvpWZt2D85GYPOKNJx%2fMRy6RhObXU1eDupPAU%3d&risl=&pid=ImgRaw&r=0",
+						price: 899,
+						quantity: 2
+					},
+					{
+						text: "4K高清电视",
+						cover: "https://img.alicdn.com/imgextra/i3/2518804462/O1CN010WKrQx1ipe1SJEATw_!!2518804462.jpg", 
+						price: 2999,
+						quantity: 1
+					}
+				],
 				cart: []
 			}
 		},
@@ -55,7 +75,7 @@
 				let xmStore = window.localStorage.getItem('xmStore')
 				if (xmStore) {
 					xmStore = JSON.parse(xmStore)
-					this.cart =xmStore.cart || []
+					this.cart = xmStore.cart || []
 					this.order = xmStore.order || []
 				}
 			},
